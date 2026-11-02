@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProtectedRoute from "./components/ProtectedRoute";
+import Protectedroute from "./components/Protectedroute";
 import Layout from "./components/Layout/Layout";
 
 import Login from "./components/Login";
@@ -32,9 +32,9 @@ function App() {
         
       <Route element={<Layout seccion="Clientes" volverA="/" />}>
         <Route path="/clientes" element={
-          <ProtectedRoute>
+          <Protectedroute>
             <Clientes />
-          </ProtectedRoute>
+          </Protectedroute>
         } />
       </Route>
 
@@ -49,25 +49,25 @@ function App() {
 
       <Route element={<Layout seccion="Pagos y Gastos" volverA="/" />}>
           <Route path="/pagos-gastos" element={
-                <ProtectedRoute>
+                <Protectedroute>
                   <PagosGastos />
-                </ProtectedRoute>
+                </Protectedroute>
               } />
             </Route>
 
             <Route element={<Layout seccion="Gastos de Taller" volverA="/" />}>
               <Route path="/gastos-taller" element={
-                <ProtectedRoute>
+                <Protectedroute>
                   <GastosTaller />
-                </ProtectedRoute>
+                </Protectedroute>
               } />
             </Route>
 
             <Route element={<Layout seccion="Materiales" volverA="/" />}>
                 <Route path="/materiales" element={
-                  <ProtectedRoute>
+                  <Protectedroute >
                     <Materiales />
-                  </ProtectedRoute>
+                  </Protectedroute>
                 } />
               </Route>
 
