@@ -23,7 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         {/* Privada */}
-       <Route path="/home" element={<Home />} />
+       {/* <Route path="/home" element={<Home />} /> */}
 
           
         <Route element={<Layout seccion="Cotizaciones" volverA="/" />}>
