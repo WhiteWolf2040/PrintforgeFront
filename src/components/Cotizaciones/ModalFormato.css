@@ -1,0 +1,101 @@
+.mf-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.mf-modal {
+  background: #fff;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1150px;
+  max-height: 90vh;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.mf-columna-editar {
+  width: 320px;
+  min-width: 280px;
+  padding: 24px;
+  overflow-y: auto;
+  border-right: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.mf-titulo {
+  margin: 0 0 4px 0;
+}
+
+.mf-ayuda {
+  font-size: 12.5px;
+  color: #666;
+  margin: 0 0 16px 0;
+}
+
+.mf-campo {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  gap: 4px;
+}
+
+.mf-textarea {
+  resize: vertical;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12.5px;
+}
+
+.mf-acciones {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.mf-btn-descargar {
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mf-btn-descargar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mf-columna-preview {
+  flex: 1;
+  background: #f4f4f4;
+  padding: 24px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .mf-modal {
+    flex-direction: column;
+    max-height: 95vh;
+  }
+  .mf-columna-editar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+}

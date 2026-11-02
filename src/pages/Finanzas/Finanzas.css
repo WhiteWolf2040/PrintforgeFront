@@ -1,0 +1,65 @@
+.fin { padding: 24px; max-width: 1100px; margin: 0 auto; }
+
+.fin-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
+}
+.fin-title { font-size: 22px; font-weight: 700; }
+.fin-mes-input { width: auto; }
+
+.fin-resumen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
+@media (max-width: 700px) { .fin-resumen { grid-template-columns: 1fr; } }
+
+.fin-resumen-card {
+  background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+  padding: 16px; display: flex; flex-direction: column; gap: 6px;
+}
+.fin-resumen-label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.03em; }
+.fin-resumen-valor { font-size: 22px; font-weight: 700; }
+.fin-resumen-card.ingreso .fin-resumen-valor { color: var(--success, #22c55e); }
+.fin-resumen-card.gasto .fin-resumen-valor { color: var(--accent-bright, #ef4444); }
+.fin-resumen-card.balance .fin-resumen-valor { color: var(--accent); }
+.fin-resumen-card.balance.negativo .fin-resumen-valor { color: var(--accent-bright, #ef4444); }
+
+.fin-section {
+  background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+  padding: 18px; margin-bottom: 16px;
+}
+.fin-section-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); margin-bottom: 14px; }
+.fin-vacio { color: var(--text-secondary); font-size: 13px; }
+
+.fin-tabla-wrap { overflow-x: auto; }
+.fin-tabla { width: 100%; border-collapse: collapse; font-size: 13px; }
+.fin-tabla th {
+  text-align: left; padding: 8px; color: var(--text-secondary); font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 1px solid var(--border-subtle);
+}
+.fin-tabla td { padding: 10px 8px; border-bottom: 1px solid var(--border-subtle); color: var(--text-primary); }
+.fin-tabla .text-right { text-align: right; }
+.fin-tabla .capitalize { text-transform: capitalize; }
+.anticipo-monto { color: var(--success, #22c55e); font-weight: 600; }
+
+.fin-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 20px; }
+@media (max-width: 900px) { .fin-layout { grid-template-columns: 1fr; } }
+
+.fin-form { display: flex; flex-direction: column; gap: 14px; }
+.fin-form label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.03em; }
+
+.fin-lista-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.fin-lista-total { font-size: 13px; font-weight: 700; color: var(--accent); }
+
+.fin-gastos-lista { display: flex; flex-direction: column; gap: 10px; }
+.fin-gasto-card {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--bg-panel); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
+  padding: 12px;
+}
+.fin-gasto-info { display: flex; flex-direction: column; gap: 2px; }
+.fin-gasto-desc { font-weight: 600; font-size: 13px; }
+.fin-gasto-meta { font-size: 11px; color: var(--text-muted); text-transform: capitalize; }
+.fin-gasto-acciones { display: flex; align-items: center; gap: 10px; }
+.fin-gasto-monto { font-weight: 700; color: var(--accent-bright, #ef4444); }
+.fin-gasto-acciones .eliminar {
+  background: none; border: none; color: var(--text-muted); font-size: 18px; cursor: pointer; line-height: 1;
+}
+.fin-gasto-acciones .eliminar:hover { color: var(--accent-bright, #ef4444); }

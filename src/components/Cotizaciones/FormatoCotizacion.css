@@ -1,0 +1,160 @@
+.fc-pagina {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding: 32px 40px 0 40px;
+  box-sizing: border-box;
+}
+
+.fc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid #c0392b;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.fc-header-derecha {
+  text-align: right;
+}
+
+.fc-titulo {
+  color: #c0392b;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin: 0 0 8px 0;
+}
+
+.fc-fecha-box {
+  border-collapse: collapse;
+  margin-left: auto;
+}
+
+.fc-fecha-box th,
+.fc-fecha-box td {
+  border: 1px solid #999;
+  padding: 4px 14px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.fc-fecha-box th {
+  background: #f2f2f2;
+}
+
+.fc-subtitulo {
+  color: #c0392b;
+  font-size: 15px;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+}
+
+.fc-datos {
+  margin-bottom: 16px;
+}
+
+.fc-fila {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.fc-descripcion {
+  margin-bottom: 16px;
+}
+
+.fc-descripcion-caja {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 13px;
+  min-height: 40px;
+  background: #fafafa;
+}
+
+.fc-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.fc-tabla th {
+  background: #c0392b;
+  color: #ffffff;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.fc-tabla td {
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+}
+
+.fc-fila-vacia td {
+  height: 22px;
+}
+
+.fc-tabla tfoot th {
+  background: none;
+  color: #1a1a1a;
+  text-align: right;
+  border-top: 2px solid #c0392b;
+  padding: 8px 10px;
+}
+
+.fc-total-monto {
+  border-top: 2px solid #c0392b;
+  font-weight: bold;
+  text-align: right;
+}
+
+.fc-vigencia {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin: 6px 0 22px 0;
+}
+
+.fc-terminos {
+  margin-bottom: 28px;
+}
+
+.fc-terminos ul {
+  font-size: 12.5px;
+  padding-left: 20px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.fc-responsable {
+  text-align: center;
+  color: #c0392b;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+
+.fc-footer {
+  background: #c0392b;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  margin: 0 -40px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Vista en pantalla dentro de un modal: le damos sombra y scroll propio */
+.fc-pagina-preview {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  overflow: auto;
+}

@@ -1,0 +1,153 @@
+/* components/Navbar/Navbar.css */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 28px;
+  background: #0b0f16;
+  border-bottom: 1px dashed #d52626;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+/* ---------- Izquierda: marca + breadcrumb ---------- */
+
+.navbar-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.navbar-marca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar-marca-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: rgba(45, 212, 238, 0.12);
+  color: #e72020;
+}
+
+.navbar-marca-nombre {
+  font-weight: 700;
+  font-size: 15px;
+  color: #f3e7e7;
+  letter-spacing: 0.01em;
+}
+
+.navbar-separador {
+  color: #3a4a56;
+  font-size: 14px;
+}
+
+.navbar-seccion {
+  font-size: 14px;
+  color: #d02929;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar-seccion:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Derecha: acciones + usuario + logout ---------- */
+
+.navbar-derecha {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.navbar-acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-usuario {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #1c2733;
+}
+
+.navbar-usuario-nombre {
+  font-size: 13px;
+  color: #aebac6;
+  white-space: nowrap;
+}
+
+.navbar-logout {
+  border: 1px solid #24313d;
+  background: transparent;
+  color: #c3ccd6;
+  font-size: 13px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.navbar-logout:hover {
+  background: #ca1d1d;
+  border-color: #f52323;
+}
+
+/* ---------- Link "volver" reutilizable dentro del contenido ---------- */
+
+.volver-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #7f97a3;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.volver-link:hover {
+  color: #f41f1f;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .navbar-usuario-nombre {
+    display: none;
+  }
+
+  .navbar-seccion {
+    max-width: 140px;
+  }
+}

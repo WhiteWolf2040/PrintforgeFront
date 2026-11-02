@@ -1,0 +1,51 @@
+:root {
+  /* Fondo */
+  --bg-app: #0a0b0f;
+  --bg-panel: #101218;
+  --bg-card: #15171e;
+  --bg-card-hover: #1a1d25;
+  --border-subtle: #24262f;
+  --border-strong: #33363f;
+
+  /* Texto */
+  --text-primary: #e8e9ec;
+  --text-secondary: #8b93a1;
+  --text-muted: #5b6270;
+
+  /* Marca (paleta roja) */
+  --accent: #D90D1E;
+  --accent-hover: #A60808;
+  --accent-bright: #F20F0F;
+  --accent-dark: #590303;
+  --accent-deep: #400202;
+  --accent-soft: rgba(217, 13, 30, 0.12);
+
+  /* Semánticos (independientes de la marca) */
+  --success: #22c55e;
+  --success-soft: rgba(34, 197, 94, 0.12);
+  --warning: #eab308;
+  --warning-soft: rgba(234, 179, 8, 0.12);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+}
+
+body { background: var(--bg-app); color: var(--text-primary); font-family: "Inter", system-ui, -apple-system, sans-serif; }
+
+.input {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.input:focus { border-color: var(--accent); }
+
+.mensaje { padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; margin: 10px 0; }
+.mensaje.ok { background: var(--success-soft); color: var(--success); }
+.mensaje.error { background: var(--accent-soft); color: var(--accent-bright); }

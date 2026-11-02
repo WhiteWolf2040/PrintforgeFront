@@ -1,0 +1,164 @@
+.cot { padding: 24px; max-width: 1200px; margin: 0 auto; }
+
+.cot-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; gap: 20px; flex-wrap: wrap; }
+.cot-back { color: var(--text-secondary); font-size: 13px; text-decoration: none; }
+.cot-title { font-size: 22px; font-weight: 700; margin-top: 4px; }
+.cot-subtitle { font-size: 13px; color: var(--text-secondary); margin-top: 6px; max-width: 420px; line-height: 1.5; }
+.cot-pendientes-link { color: var(--accent); font-size: 13px; text-decoration: none; font-weight: 600; }
+.cot-pendientes-link:hover { color: var(--accent-bright); }
+
+.cot-tipo { display: flex; gap: 8px; }
+.tipo-btn {
+  background: var(--bg-panel); border: 1px solid var(--border-subtle); color: var(--text-secondary);
+  padding: 8px 14px; border-radius: var(--radius-pill); font-size: 13px; cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+.tipo-btn:hover { transform: translateY(-1px); }
+.tipo-btn.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+.cot-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; }
+@media (max-width: 900px) { .cot-layout { grid-template-columns: 1fr; } }
+
+.cot-section {
+  background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+  padding: 18px; margin-bottom: 16px;
+}
+.cot-section-title { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+.cot-section-help { font-size: 12.5px; color: var(--text-muted); margin: 0 0 14px; line-height: 1.4; }
+
+.cot-section-mayoreo { border-color: var(--accent); }
+
+.campo-doble, .campo-triple { display: grid; gap: 12px; margin-bottom: 12px; }
+.campo-doble { grid-template-columns: 1fr 1fr; }
+.campo-triple { grid-template-columns: repeat(3, 1fr); }
+.campo-simple { margin-bottom: 12px; }
+@media (max-width: 520px) { .campo-doble, .campo-triple { grid-template-columns: 1fr; } }
+
+label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.03em; }
+.campo-ayuda { font-size: 11px; color: var(--text-muted); text-transform: none; letter-spacing: normal; line-height: 1.3; }
+
+.cot-badge-mayoreo {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600;
+  padding: 6px 12px; border-radius: var(--radius-pill); margin-top: 4px;
+}
+.cot-badge-on { background: var(--accent-soft); color: var(--accent); }
+.cot-badge-off { background: var(--bg-panel); color: var(--text-muted); border: 1px solid var(--border-subtle); }
+
+.cot-aviso-card {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 16px; border-radius: var(--radius-md); background: var(--bg-panel);
+  border: 1px solid var(--border-subtle); font-size: 13px; color: var(--text-secondary); margin-top: 10px;
+}
+.cot-aviso-btn {
+  padding: 6px 14px; border-radius: var(--radius-pill); border: 1px solid var(--accent);
+  background: transparent; color: var(--accent); font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap;
+}
+.cot-aviso-btn:hover { background: var(--accent); color: #fff; }
+
+.cot-resultado { display: flex; flex-direction: column; gap: 14px; position: sticky; top: 16px; align-self: start; }
+.resultado-card {
+  background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+  padding: 16px; display: flex; flex-direction: column; gap: 6px;
+}
+.resultado-label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.03em; }
+.resultado-valor { font-size: 24px; font-weight: 700; }
+.resultado-nota { font-size: 11px; color: var(--text-muted); }
+.resultado-desglose { display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: var(--text-secondary); margin-top: 8px; }
+.resultado-pieza { margin-top: 6px; padding-top: 8px; border-top: 1px dashed var(--border-subtle); font-size: 13px; }
+
+.resultado-card.sugerido { border-color: var(--accent); }
+.resultado-card.sugerido .resultado-valor { color: var(--accent); }
+.resultado-card.utilidad .resultado-valor { color: var(--success); }
+.resultado-card.mayoreo { border-color: var(--accent); background: var(--accent-soft); }
+.resultado-card.mayoreo .resultado-valor { color: var(--accent); }
+
+.cot-botones { display: flex; gap: 12px; margin-top: 8px; }
+.guardar-btn, .pedido-btn {
+  flex: 1; padding: 12px 20px; border-radius: var(--radius-pill); font-weight: 600; font-size: 14px; cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.guardar-btn { background: var(--accent); color: #fff; border: none; }
+.guardar-btn:hover:not(:disabled) { background: var(--accent-hover); }
+.pedido-btn { background: transparent; color: var(--text-primary); border: 1px solid var(--border-strong); }
+.pedido-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.guardar-btn:disabled, .pedido-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.mensaje { font-size: 13px; padding: 10px 14px; border-radius: var(--radius-md); }
+.mensaje.ok { background: rgba(34, 197, 94, 0.12); color: var(--success); }
+.mensaje.error { background: rgba(239, 68, 68, 0.12); color: #ef4444; }
+
+/* --- Modal: fecha límite de entrega --- */
+
+.cot-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 12, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 16px;
+}
+
+.cot-modal {
+  width: 100%;
+  max-width: 360px;
+  background: #0f151d;
+  border: 1px solid #1f2a35;
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cot-modal-titulo {
+  margin: 0;
+  font-size: 17px;
+  color: #e7edf3;
+}
+
+.cot-modal-subtitulo {
+  margin: -8px 0 0;
+  font-size: 13px;
+  color: #8a96a3;
+}
+
+.cot-modal-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #aebac6;
+}
+
+.cot-modal-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.resultado-card.seleccionable {
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: inherit;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.resultado-card.seleccionable:hover { transform: translateY(-1px); }
+
+.resultado-card.seleccionado {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 14px var(--accent-soft);
+}
+
+.precio-personalizado-input {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.25rem 0;
+}
