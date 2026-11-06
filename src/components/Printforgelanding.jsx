@@ -18,15 +18,10 @@ import {
   UploadCloud,
   FileCheck2,
   PackageCheck,
+  MapPin,
 } from "lucide-react";
 
-/* ------------------------------------------------------------------ */
-/*  PrintForge 3D — Landing page                                       */
-/*  Paleta: forja industrial (carbón + rojo óxido + blanco cálido)     */
-/*  Tipografía: Oswald (display) / Inter (cuerpo) / JetBrains Mono     */
-/*                                                                      */
-/*  Requiere: printforge-logo.png en la misma carpeta que este archivo */
-/* ------------------------------------------------------------------ */
+
 
 /* ---------------- Datos de contacto reales ---------------- */
 const WHATSAPP_NUMBER = "529999937698"; // +52 1 999 993 7698
@@ -34,8 +29,16 @@ const WHATSAPP_MESSAGE = "Hola, me interesa una cotización";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE
 )}`;
+const WHATSAPP_BULK_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Hola, me interesa una cotización por volumen"
+)}`;
 const CATALOG_LINK = "https://heyzine.com/flip-book/e61ec3f217.html";
-const MAPS_LINK = "https://maps.app.goo.gl/J8DUymkxYykZ9jm8A";
+const MAPS_LINK = "https://maps.app.goo.gl/GrcP2kqv64cLYPL16?g_st=aw";
+// Pega aquí SOLO la URL del atributo src del iframe que da Google Maps:
+// Google Maps → tu ubicación → Compartir → "Insertar un mapa" → Copiar HTML.
+// Ejemplo: "https://www.google.com/maps/embed?pb=!1m18!1m12..."
+const MAPS_EMBED_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.6189494817177!2d-89.5969159250504!3d20.967812289869933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5671a85ba47899%3A0xd3093dcbd3287301!2sPrintForge3d!5e0!3m2!1ses!2smx!4v1793994274037!5m2!1ses!2smx";
 const EMAIL = "printforge3d.1@gmail.com";
 const EMAIL_LINK = `mailto:${EMAIL}`;
 
@@ -220,6 +223,7 @@ export default function PrintForgeLanding() {
     { label: "Catálogo", href: CATALOG_LINK, external: true },
     { label: "Proceso", href: "#proceso" },
     { label: "Nosotros", href: "#nosotros" },
+    { label: "Ubicación", href: "#ubicacion" },
     { label: "Contacto", href: "#contacto" },
   ];
 
@@ -259,7 +263,7 @@ export default function PrintForgeLanding() {
           ))}
         </ul>
         <a
-          className="pf-btn pf-btn--dark desktop-only"
+          className="pf-btn pf-btn--dark pf-nav-cta desktop-only"
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
@@ -270,6 +274,7 @@ export default function PrintForgeLanding() {
           className="pf-menu-btn"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Abrir menú"
+          aria-expanded={menuOpen}
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -391,26 +396,43 @@ export default function PrintForgeLanding() {
           </h2>
         </Reveal>
         <div className="pf-services-grid">
-          <center>
-            <Reveal>
-              <div className="pf-service-card">
-                <span className="pf-service-num pf-mono">01 — Impresión 3D</span>
-                <h3>Prototipos, repuestos y piezas a medida</h3>
-                <p>
-                  Imprimimos en PLA, PETG y ABS según el uso real de tu pieza: resistencia,
-                  acabado o costo. Ideal para estudiantes, emprendedores y pymes.
-                </p>
-                <a
-                  className="pf-service-link"
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Solicitar impresión <ArrowRight size={14} />
-                </a>
-              </div>
-            </Reveal>
-          </center>
+          <Reveal>
+            <div className="pf-service-card">
+              <span className="pf-service-num pf-mono">01 — Impresión 3D</span>
+              <h3>Prototipos, repuestos y piezas a medida</h3>
+              <p>
+                Imprimimos en PLA, PETG y ABS según el uso real de tu pieza: resistencia,
+                acabado o costo. Ideal para estudiantes, emprendedores y pymes.
+              </p>
+              <a
+                className="pf-service-link"
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Solicitar impresión <ArrowRight size={14} />
+              </a>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="pf-service-card">
+              <span className="pf-service-num pf-mono">02 — Series y volumen</span>
+              <h3>Lotes de piezas iguales, listas para producir</h3>
+              <p>
+                ¿Necesitas varias piezas idénticas para tu negocio, tu proyecto escolar o
+                tu producto? Imprimimos series cortas con la misma calidad en cada una y
+                un precio especial por volumen.
+              </p>
+              <a
+                className="pf-service-link"
+                href={WHATSAPP_BULK_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cotizar un lote <ArrowRight size={14} />
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -525,6 +547,47 @@ export default function PrintForgeLanding() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* ---------------- Ubicación ---------------- */}
+      <section className="pf-section" id="ubicacion" style={{ paddingTop: 0 }}>
+        <Reveal>
+          <div className="pf-location">
+            <div className="pf-location-icon">
+              <MapPin size={26} />
+            </div>
+            <div className="pf-location-text">
+              <span className="pf-eyebrow">Encuéntranos</span>
+              <h2>Visita nuestro taller</h2>
+              <p>
+                Pasa por tu pedido o coordina una recolección directa. Abre la ubicación en
+                Google Maps y llega sin perderte.
+              </p>
+              <p className="pf-location-hours pf-mono">
+                Lun – Vie: 9am – 6pm · Sáb: 9am – 1pm
+              </p>
+            </div>
+            <a
+              className="pf-btn pf-btn--primary"
+              href={MAPS_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MapPin size={16} /> Ver en Google Maps
+            </a>
+            {MAPS_EMBED_SRC && (
+              <div className="pf-map-frame">
+                <iframe
+                  title="Ubicación de PrintForge 3D"
+                  src={MAPS_EMBED_SRC}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            )}
+          </div>
+        </Reveal>
       </section>
 
       {/* ---------------- Footer ---------------- */}
